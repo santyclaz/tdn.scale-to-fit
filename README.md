@@ -5,6 +5,11 @@ Angular directive &amp; styles designed to keep an img/video filling its contain
 - Angular `>=1.2.0`
 - jQuery `.width()`
 
+## Install with Bower
+```sh
+$ bower install tdn.scale-to-fit
+```
+
 ## Notes
 - Only designed to be used with with media files like videos or images
 - Expects container to have a set height & width
