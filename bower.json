@@ -1,0 +1,27 @@
+{
+	"name": "tdn.scale-to-fit",
+	"homepage": "https://github.com/santyclaz/tdn.scale-to-fit",
+	"authors": [
+		"Andrew Ho <santyclaz@gmail.com>"
+	],
+	"description": "Angular directive & styles designed to keep an img/video filling its container",
+	"main": [
+		"src/scale-to-fit.js",
+		"src/scale-to-fit.css"
+	],
+	"moduleType": [],
+	"keywords": [
+		"angular",
+		"scale-to-fit",
+		"scale",
+		"fit"
+	],
+	"license": "MIT",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
+}
