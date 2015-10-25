@@ -12,7 +12,6 @@ $ bower install tdn.scale-to-fit
 
 ## Notes
 - Only designed to be used with with media files like videos or images
-- Expects container to have a set height & width
 
 ## Examples
 
