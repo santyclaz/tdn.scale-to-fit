@@ -2,6 +2,7 @@
 Angular directive &amp; styles designed to keep an img/video filling its container
 
 ## Dependencies
+- Angular `>=1.2.0`
 - jQuery `.width()`
 
 ## Notes
