@@ -19,7 +19,7 @@ Angular directive &amp; styles designed to keep an img/video filling its contain
   <img src="example-1200-900.jpg" scale-to-fit="{width:4, height:3}" />
 </div>
 <div class="container" scale-to-fit-container>
-  <img src="example-1200-900.jpg" scale-to-fit="{width: 1200, height:750'" />
+  <img src="example-1200-900.jpg" scale-to-fit="{width: 1200, height:750}" />
 </div>
 
 <!-- center is true by default, may be disabled by setting to false -->
