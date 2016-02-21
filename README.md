@@ -30,8 +30,14 @@ $ bower install tdn.scale-to-fit
   <img src="example-1200-900.jpg" scale-to-fit="{width:4, height:3}" />
 </div>
 
-<!-- center is true by default, may be disabled by setting to false -->
+<!-- vertical-align valid values: 'center' (default), 'top', 'bottom', 'inherit' -->
+<!-- 'inherit' takes on default browser behavior -->
 <div class="container" scale-to-fit-container>
-  <img src="example-1200-900.jpg" scale-to-fit="{width:4, height:3}" center="false" />
+  <img src="example-1200-900.jpg" scale-to-fit="'4:3'" vertical-align="'top'" />
+</div>
+<!-- horizontal-align valid values: 'center' (default), 'left', 'right', 'inherit' -->
+<!-- 'inherit' takes on default browser behavior -->
+<div class="container" scale-to-fit-container>
+  <img src="example-1200-900.jpg" scale-to-fit="'4:3'" horizontal-align="'left'" />
 </div>
 ```

@@ -65,7 +65,8 @@ module.directive('scaleToFitContainer', [function() {
  *
  *	API:
  *	- scaleToFit : string 'width:height' | obj {width, height}
- *	- center : bool : default true
+ *	- verticalAlign: string {center, top, bottom, inherit} : default 'center'
+ *	- horizontalAlign: string {center, left, right, inherit} : default 'center'
  */
 
 module.directive('scaleToFit', [function() {
@@ -75,7 +76,8 @@ module.directive('scaleToFit', [function() {
 		require: '^scaleToFitContainer',
 		scope: {
 			scaleToFit: '=scaleToFit', // string | obj{width, height}
-			center: '=center' // bool
+			verticalAlign: '=verticalAlign', // string {center, top, bottom}
+			horizontalAlign: '=horizontalAlign', // string {center, left, right}
 		},
 		link: function(scope, element, attrs, containerCtrl) {
 			element.addClass('scale-to-fit');
@@ -95,14 +97,12 @@ module.directive('scaleToFit', [function() {
 				contentAspectRatio = new AspectRatio(dimensionObj.width, dimensionObj.height);
 			});
 
-			scope.$watch('center', function(center) {
-				// default to center if nothing set
-				if (center || center === undefined) {
-					element.addClass('center');
-				}
-				else {
-					element.removeClass('center');
-				}
+			scope.$watch('verticalAlign', function(alignment) {
+				setVerticalAlign(alignment);
+			});
+
+			scope.$watch('horizontalAlign', function(alignment) {
+				setHorizontalAlign(alignment);
 			});
 
 
@@ -154,6 +154,56 @@ module.directive('scaleToFit', [function() {
 			function setFillHeight() {
 				element.removeClass('fill-width');
 				element.addClass('fill-height');
+			}
+
+			function setVerticalAlign(alignment) {
+				clearVerticalAlign();
+
+				switch (alignment) {
+					// if inherit, don't apply any preset alignment classes
+					case 'inherit':
+						break;
+					case 'top':
+						element.addClass('top');
+						break;
+					case 'bottom':
+						element.addClass('bottom');
+						break;
+					// default to center alignment
+					default:
+					case 'center':
+						element.addClass('vertical-center');
+				}
+			}
+			function clearVerticalAlign() {
+				element.removeClass('vertical-center');
+				element.removeClass('top');
+				element.removeClass('bottom');
+			}
+
+			function setHorizontalAlign(alignment) {
+				clearHorizontalAlign();
+
+				switch (alignment) {
+					// if inherit, don't apply any preset alignment classes
+					case 'inherit':
+						break;
+					case 'left':
+						element.addClass('left');
+						break;
+					case 'right':
+						element.addClass('right');
+						break;
+					// default to center alignment
+					default:
+					case 'center':
+						element.addClass('horizontal-center');
+				}
+			}
+			function clearHorizontalAlign() {
+				element.removeClass('horizontal-center');
+				element.removeClass('left');
+				element.removeClass('right');
 			}
 
 			function parseAspectRatio(aspectRatioString) {

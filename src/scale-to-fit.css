@@ -1,4 +1,5 @@
 .scale-to-fit-container {
+	position: relative;
 	overflow: hidden;
 }
 
@@ -6,22 +7,41 @@
 	height: 100%;
 	width: auto;
 }
-.scale-to-fit-container > .scale-to-fit.fill-height.center {
+.scale-to-fit-container > .scale-to-fit.fill-height.horizontal-center {
 	position: relative;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	-ms-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
+.scale-to-fit-container > .scale-to-fit.fill-height.left {
+	position: relative;
+	left: 0;
+}
+.scale-to-fit-container > .scale-to-fit.fill-height.right {
+	position: absolute;
+	right: 0;
+}
 
 .scale-to-fit-container > .scale-to-fit.fill-width {
 	height: auto;
 	width: 100%;
 }
-.scale-to-fit-container > .scale-to-fit.fill-width.center {
+.scale-to-fit-container > .scale-to-fit.fill-width.vertical-center {
 	position: relative;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
+}
+.scale-to-fit-container > .scale-to-fit.fill-width.top {
+	position: relative;
+	top: 0;
+}
+.scale-to-fit-container > .scale-to-fit.fill-width.bottom {
+	/* "position: absolute" to align relative to container */
+	position: absolute;
+	bottom: 0;
+	/* "left: 0" is to counter-act any text-alignment that may be set */
+	left: 0;
 }
